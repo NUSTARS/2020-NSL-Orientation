@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name NUSTARS)(type Legacy)(uri ${KIPRJMOD}/../NUSTARS.lib)(options "")(descr ""))
+  (lib (name teensy)(type Legacy)(uri ${KIPRJMOD}/../libs/teensy.lib)(options "")(descr ""))
+)
