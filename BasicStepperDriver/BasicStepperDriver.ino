@@ -13,7 +13,8 @@
 
 // Motor steps per revolution. Most steppers are 200 steps or 1.8 degrees/step
 #define MOTOR_STEPS 200
-#define RPM 600
+#define RPM 120
+// RPM 600 from last year 
 
 // Since microstepping is set externally, make sure this matches the selected mode
 // If it doesn't, the motor will move at a different RPM than chosen
@@ -26,7 +27,7 @@
 //Uncomment line to use enable/disable functionality
 #define SLEEP 7
 
-int motorMultiplier = 27*2;
+int motorMultiplier = 27;
 
 // 2-wire basic config, microstepping is hardwired on the driver
 BasicStepperDriver stepper(MOTOR_STEPS, DIR, STEP);
@@ -48,8 +49,9 @@ void loop() {
     /*
      * Moving motor one full revolution using the degree notation
      */
-    stepper.rotate(360);
-
+    // stepper.rotate(360);
+    stepper.move(MOTOR_STEPS*MICROSTEPS*motorMultiplier); 
+    delay(1000);
     /*
      * Moving motor to original position using steps
      */
