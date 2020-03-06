@@ -25,18 +25,20 @@ void setup(void)
  
 void loop(void) 
 {
+
+  
   /* Get a new sensor event */ 
   sensors_event_t event; 
   bno.getEvent(&event);
   
   /* Display the floating point data */
-  Serial.print("X: ");
+  /*Serial.print("X: ");
   Serial.print(event.orientation.x, 4);
   Serial.print("\tY: ");
   Serial.print(event.orientation.y, 4);
   Serial.print("\tZ: ");
   Serial.print(event.orientation.z, 4);
-  Serial.println("");
+  Serial.println(""); */
 
   imu::Vector<3> linear_acc = bno.getVector(Adafruit_BNO055::VECTOR_LINEARACCEL);
   
@@ -50,4 +52,5 @@ void loop(void)
   Serial.println("");
   
   delay(100);
+
 }
